@@ -23,6 +23,7 @@ void MaterialBibliografico::mostrarInformacion(){
 std::string MaterialBibliografico::getNombre(){return nombre;}
 std::string MaterialBibliografico::getAutor(){return autor;}
 std::string MaterialBibliografico::getEstado(){return this->estado;}
+
 void MaterialBibliografico::actualizarEstado(){
 
     if(estado=="Disponible"){

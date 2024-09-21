@@ -15,6 +15,6 @@ Revista::~Revista(){
 
 void Revista::mostrarInformacion(){
 
-    std::cout<<"Estado: "<<this->estado<<"\nNombre: "<<this->nombre<<"\nisbn: "<<this->isbn<<"\nAutor: "<<this->autor<<"\nEdición: "<<this->numeroEdicion<<"\nMes de Publicación: "<<this->mesPublicacion<<std::endl;
+    std::cout<<"Estado: "<<this->estado<<"\nNombre: "<<this->nombre<<"\nisbn: "<<this->isbn<<"\nAutor: "<<this->autor<<"\nEdicion: "<<this->numeroEdicion<<"\nMes de Publicacion: "<<this->mesPublicacion<<std::endl;
 
 }

@@ -11,11 +11,11 @@ class MaterialBibliografico {
 
     public:
     
-        MaterialBibliografico(std::string nombre, std::string isbn, std::string autor);
-        virtual ~MaterialBibliografico();
-        virtual void mostrarInformacion();
+        MaterialBibliografico(std::string nombre, std::string isbn, std::string autor); //const
+        virtual ~MaterialBibliografico(); //dest
+        virtual void mostrarInformacion(); //Muestra la info del objeto.
         std::string getNombre();
         std::string getAutor();
         std::string getEstado();
-        void actualizarEstado();
+        void actualizarEstado(); //Actualiza el estado del material cuando está prestado o no.
 };

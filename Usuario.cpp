@@ -32,7 +32,7 @@ void Usuario::mostrarMaterialesPrestados(){
 
 }
 
-void Usuario::asignarMaterial(MaterialBibliografico* material){
+void Usuario::prestarMaterial(MaterialBibliografico* material){
 
     for(int i = 0;i<5;i++){
 
@@ -48,5 +48,21 @@ void Usuario::asignarMaterial(MaterialBibliografico* material){
 
     std::cout<<"Ya tienes el Maximo de materiales prestados"<<std::endl;
 
+}
+
+void Usuario::devolverMaterial(MaterialBibliografico* material){
+
+    for(int i = 0;i<5;i++){
+    
+        if(materialesPrestados[i]->getNombre() == material->getNombre()){
+        
+            material->actualizarEstado();
+            materialesPrestados[i] == nullptr;
+            std::cout<<"Devuelto con exito"<<std::endl;
+            return;
+        }
+    }
+
+    std::cout<<"No existe este material en los prestados al usuario."<<std::endl;
 }
 

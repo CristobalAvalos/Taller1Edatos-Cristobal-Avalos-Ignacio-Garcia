@@ -15,6 +15,6 @@ Libro::~Libro(){
 
 void Libro::mostrarInformacion(){
 
-    std::cout<<"Estado: "<<this->estado<<"\nNombre: "<<this->nombre<<"\nisbn: "<<this->isbn<<"\nAutor: "<<this->autor<<"\nFecha de publicación: "<<this->fechaPublicacion<<"\nResumen: "<<this->resumen<<std::endl;
+    std::cout<<"Estado: "<<this->estado<<"\nNombre: "<<this->nombre<<"\nisbn: "<<this->isbn<<"\nAutor: "<<this->autor<<"\nFecha de publicacion: "<<this->fechaPublicacion<<"\nResumen: "<<this->resumen<<std::endl;
 
 }

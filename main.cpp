@@ -181,7 +181,7 @@ void asignarMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lis
 
     else if(material->getEstado()=="Disponible"){
 
-        usuario->asignarMaterial(material);
+        usuario->prestarMaterial(material);
 
     } else {
 
@@ -191,6 +191,20 @@ void asignarMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lis
 
 }
 
+void devolverMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lista[]){
+
+    MaterialBibliografico* material = encontrarMaterial(titulo,lista);
+
+    if(material==nullptr){
+
+        cout<<"No existe el material"<<endl;
+        return;
+    }else {
+    
+        usuario->devolverMaterial(material);
+    }
+
+}
 int main(){
 
     MaterialBibliografico* biblioteca[100] = {nullptr};
@@ -203,7 +217,7 @@ int main(){
 
     while(opcion!=0){
 
-        cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar información\n3.- Buscar Material\n4.- Prestar y Devolver el material\n5.-Gestion de Usuarios\n6.-Guardar estado de biblioteca y Usuarios "<<endl;
+        cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\n5.-Gestion de Usuarios\n6.-Guardar estado de biblioteca y Usuarios "<<endl;
 
         cin>>opcion;
 
@@ -357,15 +371,20 @@ int main(){
                     asignarMaterial(titulo,usuario,biblioteca);
 
 
+                }else if (opcionPrestamo == 2){
+                
+                    cout<<"Ingrese el titulo del titulo que desea devolver."<<endl;
+                    string titulo;
+
+                    getline(cin,titulo);
+
+                    devolverMaterial(titulo,usuario,biblioteca);
+
+
+
                 }
 
 
-                   // if (DisponibilidadMaterial(titulo, biblioteca) != nullp){
-
-                   //     MaterialBibliografico* material = DisponibilidadMaterial(titulo, biblioteca);
-                   //     asignarMaterialUsuario(usuario,material);
-                   //     cout<<"Asignado con exito! "<<endl;
-                   // }
             }
         
         }else if(opcion==5){
