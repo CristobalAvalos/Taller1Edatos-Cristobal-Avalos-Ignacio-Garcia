@@ -7,6 +7,7 @@
 #include "Revista.h"
 
 using namespace std;
+//** ListarMaterial(Lista[]: MaterialBibliografico) : tipo void, muestra la informacion de la biblioteca, todos los libros y revistas */
 void listarMaterial(MaterialBibliografico* lista[]){
 
     for(int i = 0;i<100;i++){
@@ -15,6 +16,8 @@ void listarMaterial(MaterialBibliografico* lista[]){
 
     }
 }
+
+//** LimpiarMemoria(Lista1:MaterialBibliografico*, Lista2:Usuario*): Limpia la memoria al finalizar el programa o al asignar ciertos datos, etc. para manejo de punteros */
 void limpiarMemoria(MaterialBibliografico* lista[], Usuario* lista2[]){
 
     for(int i =0;i<100;i++){
@@ -25,6 +28,13 @@ void limpiarMemoria(MaterialBibliografico* lista[], Usuario* lista2[]){
     }
 
 }
+//**agregarMaterial(nombre: string, isbn: string, autor: string, extra1: string, extra2: string, lor: string, lista[]: MaterialBibliografico*):void, Sirve para crear los objetos
+//del material bibliografico 
+//*Parametros:
+//extra1: Depende de si es libro o revista
+//extra2: Depende si es libro o revista
+//Lista: La lista donde se agrega el nuevo objeto. */
+
 void agregarMaterial(string nombre,string isbn,string autor,string extra1,string extra2,int lor, MaterialBibliografico* lista[]){
 
     MaterialBibliografico* material;
@@ -52,7 +62,11 @@ void agregarMaterial(string nombre,string isbn,string autor,string extra1,string
     }
 
 }
+
+//**buscarMaterial(info:String,lista): Void, Sirve para el menu, buscar un material en especifico, mostrar su info y mostrar que no existe en caso de que sea asi.*/
+
 void buscarMaterial(string info, MaterialBibliografico* lista[]){
+
 
     MaterialBibliografico* material;
     bool existe = false;
@@ -75,6 +89,9 @@ void buscarMaterial(string info, MaterialBibliografico* lista[]){
         cout<< "No existe en el sistema."<<endl;
     }
 }
+
+//**crearUsuario(nombre:string, id:string, lista[]:Usuario*): Void, metodo para crear las instancias de Usuarios, comprobando si existe o no, agregandolo a la lista de usuarios. */
+
 void crearUsuario(string nombre, string id, Usuario* lista[]){
 
     Usuario* usuario;
@@ -98,6 +115,8 @@ void crearUsuario(string nombre, string id, Usuario* lista[]){
     }
 
 }
+//**datosUsuario(nombre: string, id: string, lista[]:Usuario*): Void, metodo para mostrar los datos del usuario con sus articulos en propiedad, en caso de no existir tambien da aviso. */
+
 void datosUsuario(string nombre, string id, Usuario* lista[]){
 
     Usuario* usuario;
@@ -128,6 +147,9 @@ void datosUsuario(string nombre, string id, Usuario* lista[]){
     }
 
 }
+
+//**buscarUsuario(nombre: string, id: string, lista[]:Usuario*): Usuario*, metodo para buscar un usuario en la lista de este, devuelve la instancia para poder ser trabajada. */
+
 Usuario* buscarUsuario(string nombre, string id, Usuario* lista[]){
 
     Usuario* usuario;
@@ -150,6 +172,9 @@ Usuario* buscarUsuario(string nombre, string id, Usuario* lista[]){
     }
     return nullptr;
 }
+
+//**encontrarMaterial(info:string, lista[]: MaterialBibliografico*): MaterialBibliografico*. Metodo para buscar un material en la lista de este, devuelve la instancia para poder ser trabajada. */
+
 MaterialBibliografico* encontrarMaterial(string info, MaterialBibliografico*lista[]){
 
     MaterialBibliografico* material;
@@ -171,6 +196,8 @@ MaterialBibliografico* encontrarMaterial(string info, MaterialBibliografico*list
     return nullptr;
 
 }
+//**asignarMaterial(titulo:string, usuario:Usuario*, lista[]:MaterialBibliografico*): void, Metodo para asignar un materialBibliografico a un usuario en concreto, cambiando el estado del 
+//material y la lista del usuario, comprobando si el material esta disponible o existe. */
 void asignarMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lista[]){
 
     MaterialBibliografico* material = encontrarMaterial(titulo,lista);
@@ -193,6 +220,8 @@ void asignarMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lis
 
 }
 
+//**devolverMaterial(titulo:String, usuario:Usuario*, lista[]:MaterialBibliografico*):void, Metodo para que un usuario pueda devolver un material en especifico, comprobando si el material existe. */
+
 void devolverMaterial(string titulo, Usuario* usuario, MaterialBibliografico* lista[]){
 
     MaterialBibliografico* material = encontrarMaterial(titulo,lista);
@@ -207,6 +236,8 @@ void devolverMaterial(string titulo, Usuario* usuario, MaterialBibliografico* li
     }
 
 }
+
+//**contarEspacios(lista[]: MaterialBibliografico*, maximo: int): int, Se usa para contar los espacios usados en la lista de materialBibliografico para poder ser guardados en un archivo*/
 
 int contarEspacios(MaterialBibliografico* lista[],int maximo){
 
@@ -226,6 +257,8 @@ int contarEspacios(MaterialBibliografico* lista[],int maximo){
 
 }
 
+//**contarEspacios(lista[]: Usuario*): int, Se usa para contar los espacios usados en la lista de Usuario para poder ser guardados en un archivo*/
+
 int contarEspacios(Usuario* lista[]){
 
     int contador = 0;
@@ -244,6 +277,8 @@ int contarEspacios(Usuario* lista[]){
 
 }
 
+//**guardarDatos(biblioteca[]: MaterialBibliografico* ,usuarios[]: Usuario*): void, utilizado para guardar los datos de los usuarios y el material en el archivo respaldo.txt donde primero guarda
+// los archivos de biblioteca y despues guarda los del usuario. */
 
 void guardarDatos(MaterialBibliografico* biblioteca[], Usuario* usuarios[]){
 
@@ -311,6 +346,10 @@ void guardarDatos(MaterialBibliografico* biblioteca[], Usuario* usuarios[]){
     archivo.close();
 
 }
+
+//**cargarDatos(biblioteca: MaterialBibliografico**, Usuario** usuarios): void, Metodo utilizado para cargar los datos del archivo respaldo.txt en el sistema, creando el material bibliografico y
+// usuarios correspondientes */
+
 void cargarDatos(MaterialBibliografico** biblioteca, Usuario** usuarios){
 
     limpiarMemoria(biblioteca, usuarios);
@@ -427,12 +466,14 @@ int main(){
     int opcionInterior = 10;
     cout<<biblioteca[0]<<endl;
 
+    //menu:
+    
     while(opcion!=0){
 
         cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\n5.-Gestion de Usuarios\n6.-Guardar estado de biblioteca y Usuarios "<<endl;
 
         cin>>opcion;
-
+        
         if(opcion==1){
 
             cout<<"¿Que desea agregar=\n1.-Libro\n2.-Revista"<<endl;

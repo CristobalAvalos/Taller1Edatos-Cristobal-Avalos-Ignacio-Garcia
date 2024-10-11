@@ -1,5 +1,13 @@
 #pragma once
 #include <iostream>
+
+//Clase MaterialBibliografico 
+//Metodos:
+
+//MaterialBibliografico(nombre:String, isbn: String, autor: String): constructor
+//virtual ~MaterialBibliografico();
+//Getters
+
 class MaterialBibliografico { 
 
     protected:
