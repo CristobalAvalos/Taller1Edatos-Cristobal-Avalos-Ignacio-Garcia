@@ -1,41 +1,83 @@
-4
+8
 Libro
-Fernanda y Ignacio
-0
-Ignacio
-11/10/2024
-Fernanda e Ignacio se aman mucho
+La metamorfosis
+14824
+Franz Kafka
+1915
+La metamorfosis es un libro
 Libro
-Luna Bella
-1
-Fernanda
-11/10/2024
-ai love u lune
+Jujutsu kaisen vol 3
+1231283184
+Akutami Gege
+2018
+Vas a morir gege
+Libro
+La odisea
+9123194
+Homero
+Siglo VII
+La odisea es un libro fome que nos hacian leer en la escuela
+Libro
+Sherlock Holmes 
+12934857
+Arthur Conan
+1859
+Sherlock holmes es de detectives
 Revista
-Cocina
+The daily bugle
+12485724
+J. Jonah Jameson
 3
-Fernanda
-1
-01
+03
 Revista
-Moda
-4
-Daniela
-4
-05
-1
-Ignacio
-21664915k
+Revista de Moda Paris
+1201824412
+Dior
 2
+04
 Revista
-Moda
-4
-Daniela
-4
-05
+Shonen Jump
+124474128
+Desconocido
+123123
+07
 Revista
-Cocina
+Diario La tercera
+1293120494
+Jaime bayly
+123321
+02
 3
-Fernanda
-1
-01
+Cristobal
+216247310
+2
+Libro
+La metamorfosis
+14824
+Franz Kafka
+1915
+La metamorfosis es un libro
+Libro
+La odisea
+9123194
+Homero
+Siglo VII
+La odisea es un libro fome que nos hacian leer en la escuela
+Ignacio
+2
+2
+Libro
+Jujutsu kaisen vol 3
+1231283184
+Akutami Gege
+2018
+Vas a morir gege
+Revista
+The daily bugle
+12485724
+J. Jonah Jameson
+3
+03
+Ayudante
+3
+0

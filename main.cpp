@@ -361,7 +361,6 @@ void cargarDatos(MaterialBibliografico** biblioteca, Usuario** usuarios){
 
     getline(archivo,linea);
 
-
     int cantMaterial = stoi(linea);
 
     for(int i = 0; i<cantMaterial; i++){
@@ -465,7 +464,7 @@ int main(){
     int lor;
     int opcionInterior = 10;
     cout<<biblioteca[0]<<endl;
-
+    cargarDatos(biblioteca,usuarios);
     //menu:
     
     while(opcion!=0){
@@ -474,6 +473,7 @@ int main(){
 
         cin>>opcion;
         
+        //** Opciones del menú para el item 1, para agregar instancias a la lista de la biblioteca. */
         if(opcion==1){
 
             cout<<"¿Que desea agregar=\n1.-Libro\n2.-Revista"<<endl;
@@ -554,13 +554,13 @@ int main(){
             }
             
             cout<<"Agregado con exito"<<endl;
-
+        //** Opcion para listar todo el material existente en la base de datos */
         } else if(opcion==2){
 
             cin.ignore();
 
             listarMaterial(biblioteca);
-
+        //** Opción para buscar los materiales distinguiendo entre titulo y autor */
         } else if(opcion==3){
 
             cout<<"¿Como quieres buscar?\n1.-Por Titulo\n2.-Por Autor"<<endl;
@@ -587,7 +587,7 @@ int main(){
 
                     buscarMaterial(autor,biblioteca);
                 }
-
+        //** Opcion para la prestacion o devolucion de material bibliografico a los usuarios, controlando que ele usuario existe. */
         } else if(opcion==4){
         
         
@@ -639,7 +639,7 @@ int main(){
 
 
             }
-        
+        //** Opcion para la creacion de usuario(1), busqueda(2), eliminar(3) */
         }else if(opcion==5){
     
             cout<<"Que deseas, Crear usuario (1), Buscar un usuario (2),  eliminar un usuario (3)"<<endl;
@@ -676,7 +676,7 @@ int main(){
             int opcion6 = 0;
             cin.ignore();
 
-            cout<<"¿Que desea?\n1.-Guardar el estado de la biblioteca\n2.-Cargar el estado de la biblioteca"<<endl;
+            cout<<"¿Que desea?\n1.-Guardar el estado de la biblioteca\n2.-Cargar el estado de la biblioteca\n3.-Volver (presione cualquier numero)"<<endl;
             
             cin>>opcion6;
 
@@ -684,10 +684,13 @@ int main(){
 
                 guardarDatos(biblioteca, usuarios);
 
-            } else {
+            } else if(opcion6==2) {
                 
                 cargarDatos(biblioteca,usuarios);
 
+            } else {
+
+                
             }
 
 
