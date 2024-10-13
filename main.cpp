@@ -467,9 +467,10 @@ int main(){
     cargarDatos(biblioteca,usuarios);
     //menu:
     
+    
     while(opcion!=0){
 
-        cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\nPara cerrar el programa escriba cualquier otro numero. "<<endl;
+        cout<<"Introduce la opcion: \n0.- Cerrar programa. \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\n5.-Gestion de Usuarios\n6.-Guardar estado de biblioteca y Usuarios"<<endl;
 
         cin>>opcion;
         
@@ -694,24 +695,27 @@ int main(){
             }
 
 
-        }else {
+        }else if(opcion==0){
 
-        cout<<"Cerrado con exito, Desea guardar sus cambios? (1. SI/ 2. NO)"<<endl;
+            cout<<"Cerrado con exito, Desea guardar sus cambios? (1. SI/ 2. NO)"<<endl;
 
-        int opcion6 = 0;
-        cin.ignore();
+            int opcion6 = 0;
+            cin.ignore();
 
-        cin>>opcion6;
-        if (opcion6 == 1){
+            cin>>opcion6;
+            if (opcion6 == 1){
 
-            guardarDatos(biblioteca, usuarios);
-            cout<<"Guardado con exito"<<endl;
-            break;
-        }else{
+                guardarDatos(biblioteca, usuarios);
+                cout<<"Guardado con exito"<<endl;
+                break;
+            }else{
 
-            break;
-        }
+                break;
+            }
         
+    }else {
+
+        cout<<"Opcion invalida."<<endl;
     }
     
 }
