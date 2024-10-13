@@ -469,7 +469,7 @@ int main(){
     
     while(opcion!=0){
 
-        cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\n5.-Gestion de Usuarios\n6.-Guardar estado de biblioteca y Usuarios "<<endl;
+        cout<<"Introduce la opcion: \n1.- Agregar material a la biblioteca\n2.- Mostrar informacion\n3.- Buscar Material\n4.- Prestar y Devolver el material\nPara cerrar el programa escriba cualquier otro numero. "<<endl;
 
         cin>>opcion;
         
@@ -694,9 +694,27 @@ int main(){
             }
 
 
+        }else {
+
+        cout<<"Cerrado con exito, Desea guardar sus cambios? (1. SI/ 2. NO)"<<endl;
+
+        int opcion6 = 0;
+        cin.ignore();
+
+        cin>>opcion6;
+        if (opcion6 == 1){
+
+            guardarDatos(biblioteca, usuarios);
+            cout<<"Guardado con exito"<<endl;
+            break;
+        }else{
+
+            break;
         }
-    
+        
     }
+    
+}
 
     limpiarMemoria(biblioteca, usuarios);
 
