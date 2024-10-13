@@ -173,6 +173,52 @@ Usuario* buscarUsuario(string nombre, string id, Usuario* lista[]){
     return nullptr;
 }
 
+//** eliminarUsuario(nombre: string, id:string, lista[]:Usuario*): Void, metodo para eliminar usuarios, sus pertenencias son actualizadas a disponibles  */
+
+void eliminarUsuario(string nombre, string id, Usuario** usuarios){
+
+    Usuario* uTemp = buscarUsuario(nombre,id,usuarios);
+
+    
+
+    if (uTemp == nullptr){
+        cout<<"Usuario inexistente"<<endl;
+        return;
+    } else {
+
+        MaterialBibliografico** materialTemp = uTemp->getMaterial();
+
+        for(int b = 0; b<100;b++){
+            
+            if(usuarios[b]!=nullptr){
+
+                if((usuarios[b]->getNombre() == uTemp ->getNombre()) && (usuarios[b]->getId() == uTemp->getId())){
+
+                    usuarios[b]=nullptr;
+
+                } 
+            }
+
+        }
+
+
+        for(int i = 0; i<5;i++){
+
+            if(materialTemp[i]!=nullptr){
+
+                materialTemp[i]->actualizarEstado();
+
+            }
+
+
+        }
+
+    }
+
+    delete uTemp;
+
+}
+
 //**encontrarMaterial(info:string, lista[]: MaterialBibliografico*): MaterialBibliografico*. Metodo para buscar un material en la lista de este, devuelve la instancia para poder ser trabajada. */
 
 MaterialBibliografico* encontrarMaterial(string info, MaterialBibliografico*lista[]){
@@ -671,6 +717,19 @@ int main(){
                 getline(cin,id);
 
                 datosUsuario(nombre,id,usuarios);
+
+            } else if (opcionUsuario == 3){
+
+                cout<<"Ingresa el nombre"<<endl;
+                string nombre;
+                cin.ignore();
+                getline(cin,nombre);
+                cout<<"ID del usuario que deseas eliminar: "<<endl;
+                string id;
+                getline(cin,id);
+
+                eliminarUsuario(nombre,id,usuarios);
+
             }
         } else if (opcion==6){
 
